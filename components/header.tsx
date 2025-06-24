@@ -17,6 +17,12 @@ export default function Header({ darkMode, setDarkMode }: HeaderProps) {
           <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200">
             About Me
           </Link>
+          <a
+            href="#resume"
+            className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200"
+          >
+            Resume
+          </a>
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
