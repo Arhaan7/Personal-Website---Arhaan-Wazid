@@ -23,6 +23,12 @@ export default function Header({ darkMode, setDarkMode }: HeaderProps) {
           >
             Resume
           </a>
+          <Link
+            href="/two-truths-and-a-lie"
+            className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200"
+          >
+            Games
+          </Link>
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
