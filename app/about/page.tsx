@@ -30,7 +30,7 @@ export default function AboutPage() {
               Carleton University
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
-              Proudly pursuing my Computer Science degree at Carleton University in Ottawa, specializing in AI and Machine Learning.
+              4th-year Computer Science student at Carleton University in Ottawa, specializing in AI, Machine Learning, and Embedded Systems. Expected graduation: 2027.
             </p>
           </div>
         </div>
