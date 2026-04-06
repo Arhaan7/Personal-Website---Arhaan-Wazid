@@ -4,7 +4,6 @@ import HiringBanner from '../components/hiring-banner'
 import ExperienceHighlights from '../components/experience-highlights'
 import TechStack from '../components/tech-stack'
 import Skills from '../components/skills'
-import Resume from '../components/resume'
 
 export default function Home() {
   return (
@@ -14,8 +13,6 @@ export default function Home() {
       <ExperienceHighlights />
       <TechStack />
       <Skills />
-      <Resume />
     </Layout>
   )
 }
-

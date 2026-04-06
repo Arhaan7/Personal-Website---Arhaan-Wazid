@@ -18,9 +18,9 @@ const techStack = [
 
 export default function TechStack() {
   return (
-    <section className="py-16 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+    <section className="py-16 bg-white dark:bg-gray-900 overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-12 reveal-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Tech Stack
           </h2>
@@ -32,15 +32,12 @@ export default function TechStack() {
           {techStack.map((tech, index) => (
             <div
               key={tech.name}
-              className="group relative flex flex-col items-center p-6 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-gray-100 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 min-w-[120px]"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className={`reveal-on-scroll reveal-delay-${Math.min((index % 5) + 1, 5)} group relative flex flex-col items-center p-6 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-gray-100 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 min-w-[120px] heritage-glow`}
             >
-              <div className="relative mb-3">
-                <tech.icon 
-                  className="w-14 h-14 transition-all duration-500 group-hover:scale-125 group-hover:rotate-6"
-                  style={{ color: tech.color }}
-                />
-              </div>
+              <tech.icon 
+                className="w-14 h-14 mb-3 transition-all duration-500 group-hover:scale-125 group-hover:rotate-6"
+                style={{ color: tech.color }}
+              />
               <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 text-center">
                 {tech.name}
               </span>

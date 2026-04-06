@@ -1,10 +1,11 @@
 import { Briefcase, Calendar, GraduationCap } from 'lucide-react'
+import Link from 'next/link'
 
 export default function HiringBanner() {
   return (
-    <section className="py-12 px-4">
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 rounded-2xl shadow-2xl p-6 md:p-12 text-white transform hover:scale-[1.01] transition-transform duration-300">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <section className="py-12 px-4 container mx-auto max-w-7xl">
+      <div className="reveal-on-scroll bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-700 dark:via-purple-700 dark:to-blue-700 rounded-2xl shadow-2xl p-6 md:p-12 text-white transform hover:scale-[1.01] transition-transform duration-300 relative overflow-hidden">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
           <div className="flex-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
               <Briefcase className="w-7 h-7 md:w-8 md:h-8" />
@@ -31,13 +32,12 @@ export default function HiringBanner() {
             >
               Let's Connect
             </a>
-            <a
-              href="/resume.pdf"
-              download
+            <Link
+              href="/resume"
               className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 text-center shadow-lg w-full sm:w-auto whitespace-nowrap"
             >
-              Download Resume
-            </a>
+              View Resume
+            </Link>
           </div>
         </div>
       </div>

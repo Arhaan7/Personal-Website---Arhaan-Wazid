@@ -30,22 +30,23 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16 reveal-on-scroll">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Technical Expertise
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
             Technologies and tools I work with
           </p>
+          <div className="heritage-divider max-w-xs mx-auto mt-6" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Use flexbox instead of grid so the last row centers automatically */}
+        <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
             <div 
               key={skill.name} 
-              className="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transform hover:-translate-y-2"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`reveal-on-scroll reveal-delay-${Math.min(index + 1, 5)} group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transform hover:-translate-y-2 heritage-glow w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]`}
             >
               <div className="flex items-center mb-6">
                 <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -70,4 +71,3 @@ export default function Skills() {
     </section>
   )
 }
-

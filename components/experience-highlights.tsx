@@ -3,7 +3,7 @@ import { Building2, Code2, Rocket, TrendingUp } from 'lucide-react'
 const experiences = [
   {
     company: 'Ciena',
-    role: 'Embedded Software Engineer',
+    role: 'Embedded Software Engineer Intern',
     period: 'Current',
     icon: Building2,
     highlights: [
@@ -37,15 +37,16 @@ const achievements = [
 
 export default function ExperienceHighlights() {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+    <section className="relative py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16 reveal-on-scroll">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Professional Experience
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">
             My journey in software engineering
           </p>
+          <div className="heritage-divider max-w-xs mx-auto mt-6" />
         </div>
         
         {/* Stats Bar */}
@@ -53,7 +54,11 @@ export default function ExperienceHighlights() {
           {achievements.map((item, index) => (
             <div 
               key={index}
-              className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-all duration-300 border-2 border-gray-100 dark:border-gray-700"
+              className={`reveal-on-scroll reveal-delay-${index + 1} bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-all duration-300 border-2 border-gray-100 dark:border-gray-700 heritage-glow`}
+              style={{
+                borderTopColor: index === 0 ? 'var(--heritage-saffron)' : index === 1 ? 'var(--heritage-maroon)' : 'var(--heritage-green)',
+                borderTopWidth: '3px'
+              }}
             >
               <item.icon className="w-12 h-12 mx-auto mb-4 text-blue-600 dark:text-blue-400" />
               <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3">
@@ -71,10 +76,10 @@ export default function ExperienceHighlights() {
           {experiences.map((exp, index) => (
             <div 
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-gray-100 dark:border-gray-700"
+              className={`${index === 0 ? 'reveal-slide-left' : 'reveal-slide-right'} bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-gray-100 dark:border-gray-700`}
             >
               <div className={`bg-gradient-to-r ${exp.color} p-8 text-white relative overflow-hidden`}>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16" />
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-3">
                     <exp.icon className="w-12 h-12" />
@@ -89,11 +94,8 @@ export default function ExperienceHighlights() {
               <div className="p-8">
                 <ul className="space-y-4">
                   {exp.highlights.map((highlight, idx) => (
-                    <li 
-                      key={idx}
-                      className="flex items-start text-gray-700 dark:text-gray-300"
-                    >
-                      <span className="text-blue-500 text-xl mr-3 mt-0.5 flex-shrink-0">▹</span>
+                    <li key={idx} className="flex items-start text-gray-700 dark:text-gray-300">
+                      <span className="text-xl mr-3 mt-0.5 flex-shrink-0" style={{ color: 'var(--heritage-saffron)' }}>▹</span>
                       <span className="leading-relaxed">{highlight}</span>
                     </li>
                   ))}
